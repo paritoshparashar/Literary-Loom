@@ -1,4 +1,25 @@
 #book-grid{
     display: grid;
     grid-template-columns: repeat(6,1fr);
+    gap: 5%;
 }
+
+h2{
+    margin: 0;
+}
+
+form{
+    position: absolute;
+    align-items: center;
+    display: grid;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 20%;
+    gap: 10px;
+    border: 2px solid black;
+    padding: 20px;
+    justify-content: center;
+    z-index: 1;
+}
+

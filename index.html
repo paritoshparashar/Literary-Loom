@@ -9,15 +9,20 @@
 </head>
 <body>
     <button>ADD NEW BOOK</button>
+    
     <form id="bookInfoForm">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" required>
-        <label for="author">Author</label>
-        <input type="text" id="author" name="author" required>
-        <label for="totalPages">Total Pages</label>
-        <input type="text" id="totalPages" name="Total Pages" required>
-        <label for="hasRead">Read</label>
-        <input type="checkbox" id="haveRead" name="haveRead" required>
+
+        <h2>Library Card</h2>
+        
+        <input type="text" id="title" name="title" placeholder="Title" required>
+        
+        <input type="text" id="author" name="author" placeholder="Author" required>
+    
+        <input type="text" id="totalPages" name="Total Pages" placeholder="Pages" required>
+        <div class="check-read">
+            <label for="haveRead">Have you read it?</label>
+            <input type="checkbox" id="haveRead" name="haveRead" required>
+        </div>
         <button type="button" onclick="addBookToLibrary()">Submit</button>
     </form>
 

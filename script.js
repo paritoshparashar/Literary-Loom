@@ -1,6 +1,7 @@
 const myLibrary = [];
 var divCounter = 0;
 const bookGrid = document.getElementById('book-grid');
+var newBook;
 
 function Book( title, author, totalPages, haveRead) {
 
@@ -31,7 +32,7 @@ function addBookToLibrary() {
     var haveRead = document.getElementById('haveRead').checked;
 
     //Create the book object by calling Book constructor
-    const newBook = new Book (title, author, totalPages, haveRead);
+    newBook = new Book (title, author, totalPages, haveRead);
 
     addDiv();
 }
@@ -51,7 +52,7 @@ function createDivProto(){
 function addDiv (){
 
     var createdDiv = createDivProto();
-    createdDiv.style.backgroundColor = 'red';
+    createdDiv.textContent = `${newBook.info()}`;
 }
 
 // for (let i = 0; i < myLibrary.length; i++) {
