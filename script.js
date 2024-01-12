@@ -13,9 +13,16 @@ function Book( title, author, pagesRead, totalPages, haveRead) {
     this.pagesRead = pagesRead;
     this.totalPages = totalPages;
     this.haveRead = haveRead;
-    if (totalPages === pagesRead) {
+    if (!this.haveRead) {
+
+        if (totalPages === pagesRead) {
         this.haveRead = true;
+        }
+        else{
+            this.haveRead = false;
+        }
     }
+    
 
 }
 
@@ -43,8 +50,11 @@ function createDivProto(){
     var newDiv = document.createElement('div');
     newDiv.id = `${divCounter}`;
     newDiv.className = 'new_Div';
-    if (condition) {
-        
+    if (newBook.haveRead) {
+        newDiv.style.border = '2px solid green'
+    }
+    else{
+        newDiv.style.border = '2px solid red'
     }
     bookGrid.appendChild(newDiv);
     return newDiv;
