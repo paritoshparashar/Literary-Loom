@@ -63,10 +63,13 @@ function createDivProto(){
 function populateDiv () {
     bTitle = document.createElement('h2');
     bAuthor = document.createElement('h5');
+    bPage = document.createElement('h4');
     bTitle.textContent = newBook.title;
     bAuthor.textContent = newBook.author;
+    bPage.textContent = `You have read ${newBook.pagesRead}/${newBook.totalPages} pages.`;
     createdDiv.appendChild(bTitle);
     createdDiv.appendChild(bAuthor);
+    createdDiv.appendChild(bPage);
 }
 
 function toggleLibraryCard() {
