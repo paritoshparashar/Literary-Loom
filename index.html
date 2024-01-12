@@ -23,8 +23,9 @@
         <input type="text" id="title" name="title" placeholder="Title" required>
         
         <input type="text" id="author" name="author" placeholder="Author" required>
-    
-        <input type="text" id="totalPages" name="Total Pages" placeholder="Pages" required>
+
+        <input type="number" id="quantity" name="quantity" placeholder="Pages Read" min="0" max="2000" step="1">
+        <input type="text" id="totalPages" name="Total Pages" placeholder="Total Pages" required>
         <div class="check-read">
             <label for="haveRead">Have you read it?</label>
             <input type="checkbox" id="haveRead" name="haveRead" required>
