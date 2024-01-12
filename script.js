@@ -3,26 +3,18 @@ var divCounter = 0;
 const bookGrid = document.getElementById('book-grid');
 const formDiv = document.getElementById('bookInfoForm');
 const blurBackground = document.getElementById('blur-background');
-var newBook;
+var newBook; //new book object
+var createdDiv; //new book card
 
-function Book( title, author, totalPages, haveRead) {
+function Book( title, author, pagesRead, totalPages, haveRead) {
 
     this.title = title;
     this.author = author;
+    this.pagesRead = pagesRead;
     this.totalPages = totalPages;
     this.haveRead = haveRead;
-    this.info = function (){
-
-        var readMsg;
-
-        if (haveRead) {
-            readMsg = 'read'
-        }
-        else{
-            readMsg = 'not read yet'
-        }
-
-        return (`${this.title} by ${this.author}, ${this.totalPages} pages, ${readMsg}`);
+    if (totalPages === pagesRead) {
+        this.haveRead = true;
     }
 
 }
@@ -31,12 +23,19 @@ function addBookToLibrary() {
     var title = document.getElementById('title').value;
     var author = document.getElementById('author').value;
     var totalPages = document.getElementById('totalPages').value;
+    var pagesRead = document.getElementById('totalPages').value;
     var haveRead = document.getElementById('haveRead').checked;
 
     //Create the book object by calling Book constructor
-    newBook = new Book (title, author, totalPages, haveRead);
+    newBook = new Book (title, author, pagesRead, totalPages, haveRead);
     myLibrary.push(newBook);
     addDiv();
+}
+
+function addDiv (){
+    createdDiv = createDivProto();
+    populateDiv();
+    toggleLibraryCard();
 }
 
 function createDivProto(){
@@ -50,11 +49,11 @@ function createDivProto(){
 
 }
 
-function addDiv (){
 
-    var createdDiv = createDivProto();
-    createdDiv.textContent = `${newBook.info()}`;
-    toggleLibraryCard();
+function populateDiv () {
+    bTitle = document.createElement('h2');
+    bTitle.textContent = newBook.title;
+    createdDiv.appendChild(bTitle);
 }
 
 function toggleLibraryCard() {
