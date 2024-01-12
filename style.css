@@ -1,7 +1,31 @@
+body{
+    margin: 0;
+}
+
 #book-grid{
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(auto-fill, minmax( 200px , 1fr));
+    justify-content: center;
     gap: 5%;
+    padding: 20px;
+}
+
+.new_Div{
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#blur-background{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.542);
+    display: none;
+    z-index: 2;
 }
 
 h2{
@@ -11,7 +35,7 @@ h2{
 form{
     position: absolute;
     align-items: center;
-    display: grid;
+    display: none;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -20,6 +44,7 @@ form{
     border: 2px solid black;
     padding: 20px;
     justify-content: center;
-    z-index: 1;
+    z-index: 3;
+    background-color: white;
 }
 

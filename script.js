@@ -1,6 +1,8 @@
 const myLibrary = [];
 var divCounter = 0;
 const bookGrid = document.getElementById('book-grid');
+const formDiv = document.getElementById('bookInfoForm');
+const blurBackground = document.getElementById('blur-background');
 var newBook;
 
 function Book( title, author, totalPages, haveRead) {
@@ -42,8 +44,7 @@ function createDivProto(){
     ++divCounter;
     var newDiv = document.createElement('div');
     newDiv.id = `${divCounter}`;
-    newDiv.style.height = '200px';
-    newDiv.style.border = '2px solid black';
+    newDiv.className = 'new_Div';
     bookGrid.appendChild(newDiv)
     return newDiv;
 
@@ -53,8 +54,16 @@ function addDiv (){
 
     var createdDiv = createDivProto();
     createdDiv.textContent = `${newBook.info()}`;
+    toggleLibraryCard();
 }
 
-// for (let i = 0; i < myLibrary.length; i++) {
-//     console.log(myLibrary[i]);
-// }
+function toggleLibraryCard() {
+
+    if ((window.getComputedStyle(blurBackground)).display === 'none') {
+        formDiv.style.display = 'grid'; 
+        blurBackground.style.display = 'block'; 
+    } else {
+        formDiv.style.display = 'none';
+        blurBackground.style.display = 'none';
+    }
+}
