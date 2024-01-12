@@ -39,21 +39,21 @@ function addDiv (){
 }
 
 function createDivProto(){
-
     ++divCounter;
     var newDiv = document.createElement('div');
     newDiv.id = `${divCounter}`;
     newDiv.className = 'new_Div';
     bookGrid.appendChild(newDiv)
     return newDiv;
-
 }
-
 
 function populateDiv () {
     bTitle = document.createElement('h2');
+    bAuthor = document.createElement('h5');
     bTitle.textContent = newBook.title;
+    bAuthor.textContent = newBook.author;
     createdDiv.appendChild(bTitle);
+    createdDiv.appendChild(bAuthor);
 }
 
 function toggleLibraryCard() {
