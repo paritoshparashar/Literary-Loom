@@ -59,12 +59,34 @@ form > h2{
     text-align: center;
 }
 
-form > input {
+form > input , .pages > input {
     border: 2px solid black;
     border-radius: 4px;
     height: 25px;
     background-color: rgb(243, 243, 243);
 }
+
+.pages > input::placeholder {
+    font-size: 12px; /* Adjust the font size as needed */
+}
+
+form > .pages{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+span{
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+
+.pages > input {
+    width: 100%;
+
+}
+
 form > button {
     width: 50%;
     justify-self: center;

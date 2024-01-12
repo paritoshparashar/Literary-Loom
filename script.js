@@ -23,7 +23,7 @@ function addBookToLibrary() {
     var title = document.getElementById('title').value;
     var author = document.getElementById('author').value;
     var totalPages = document.getElementById('totalPages').value;
-    var pagesRead = document.getElementById('totalPages').value;
+    var pagesRead = document.getElementById('pagesRead').value;
     var haveRead = document.getElementById('haveRead').checked;
 
     //Create the book object by calling Book constructor
@@ -43,7 +43,10 @@ function createDivProto(){
     var newDiv = document.createElement('div');
     newDiv.id = `${divCounter}`;
     newDiv.className = 'new_Div';
-    bookGrid.appendChild(newDiv)
+    if (condition) {
+        
+    }
+    bookGrid.appendChild(newDiv);
     return newDiv;
 }
 
