@@ -1,10 +1,16 @@
 body{
     margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    font-size: larger;
+    font-weight: 700;
 }
 
 #book-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax( 200px , 1fr));
+    grid-template-columns: repeat(auto-fill, minmax( 220px , 1fr));
     justify-content: center;
     gap: 5%;
     padding: 20px;
@@ -39,12 +45,29 @@ form{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 20%;
-    gap: 10px;
+    width: 210px;
+    height: 320px;
     border: 2px solid black;
     padding: 20px;
     justify-content: center;
     z-index: 3;
     background-color: white;
+    border-radius: 20px;
+}
+
+form > h2{
+    text-align: center;
+}
+
+form > input {
+    border: 2px solid black;
+    border-radius: 4px;
+    height: 25px;
+    background-color: rgb(243, 243, 243);
+}
+form > button {
+    width: 50%;
+    justify-self: center;
+    border-radius: 4px;
 }
 

@@ -35,7 +35,7 @@ function addBookToLibrary() {
 
     //Create the book object by calling Book constructor
     newBook = new Book (title, author, totalPages, haveRead);
-
+    myLibrary.push(newBook);
     addDiv();
 }
 
