@@ -64,9 +64,16 @@ function populateDiv () {
     bTitle = document.createElement('h2');
     bAuthor = document.createElement('h5');
     bPage = document.createElement('h4');
+    bReadStatus = document.createElement('h3');
     bTitle.textContent = newBook.title;
     bAuthor.textContent = newBook.author;
     bPage.textContent = `You have read ${newBook.pagesRead}/${newBook.totalPages} pages.`;
+    if (newBook.haveRead) {
+            bReadStatus.textContent = 'Completed';
+    }
+    else{
+        bReadStatus.textContent = 'Still Reading';
+    }
     createdDiv.appendChild(bTitle);
     createdDiv.appendChild(bAuthor);
     createdDiv.appendChild(bPage);
