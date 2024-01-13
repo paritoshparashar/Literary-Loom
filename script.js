@@ -77,6 +77,7 @@ function populateDiv () {
     createdDiv.appendChild(bTitle);
     createdDiv.appendChild(bAuthor);
     createdDiv.appendChild(bPage);
+    createdDiv.appendChild(bReadStatus);
 }
 
 function toggleLibraryCard() {
