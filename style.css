@@ -8,6 +8,15 @@ header{
     font-weight: 700;
 }
 
+.addNewBook{
+
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(131, 127, 255);
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
 #book-grid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax( 220px , 1fr));
