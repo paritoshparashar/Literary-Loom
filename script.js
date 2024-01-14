@@ -66,7 +66,7 @@ function populateDiv () {
     bPage = document.createElement('h4');
     bReadStatus = document.createElement('h3');
     bTitle.textContent = newBook.title;
-    bAuthor.textContent = newBook.author;
+    bAuthor.textContent = `by ${newBook.author}`;
     bPage.textContent = `You have read ${newBook.pagesRead}/${newBook.totalPages} pages.`;
     if (newBook.haveRead) {
             bReadStatus.textContent = 'Completed';

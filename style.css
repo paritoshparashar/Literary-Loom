@@ -32,6 +32,10 @@ header{
     padding: 20px;
 }
 
+.new_Div > h3{
+    text-align: center;
+}
+
 #blur-background{
     position: absolute;
     left: 0;
