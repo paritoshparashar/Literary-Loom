@@ -6,23 +6,26 @@ const blurBackground = document.getElementById('blur-background');
 var newBook; //new book object
 var createdDiv; //new book card
 
-function Book( title, author, pagesRead, totalPages, haveRead) {
+class Book {
 
-    this.title = title;
-    this.author = author;
-    this.pagesRead = pagesRead;
-    this.totalPages = totalPages;
-    this.haveRead = haveRead;
-    if (!this.haveRead) {
 
-        if (totalPages === pagesRead) {
-        this.haveRead = true;
-        }
-        else{
-            this.haveRead = false;
-        }
-    }
+    constructor( title, author, pagesRead, totalPages, haveRead){
+        this.title = title;
+        this.author = author;
+        this.pagesRead = pagesRead;
+        this.totalPages = totalPages;
+        this.haveRead = haveRead;
     
+        if (!this.haveRead) {
+
+            if (totalPages === pagesRead) {
+            this.haveRead = true;
+            }
+            else{
+                this.haveRead = false;
+            }
+        }
+    }   
 
 }
 
@@ -33,7 +36,7 @@ function addBookToLibrary() {
     var pagesRead = document.getElementById('pagesRead').value;
     var haveRead = document.getElementById('haveRead').checked;
 
-    //Create the book object by calling Book constructor
+    //Create the book object by calling Book class constructor
     newBook = new Book (title, author, pagesRead, totalPages, haveRead);
     myLibrary.push(newBook);
     addDiv();
